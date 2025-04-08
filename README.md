@@ -1,9 +1,9 @@
 
 # Prime-seq G400 pipeline
 
-Authors:
-	Paulo
-	Hong
+Authors:        Paulo
+                Hong
+
 Date: 2025-04-08
 
 ## Introduction
