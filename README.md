@@ -1,3 +1,6 @@
 # Prime-seq analysis pipeline for DNBSEQ-G400
 
-By Paulo Jannig
+Authors:    Paulo Jannig
+            Hong Jiang
+
+Date: 2025-04-08
