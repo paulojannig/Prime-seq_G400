@@ -1,9 +1,7 @@
 
 # Prime-seq G400 pipeline
-Authors: Paulo Jannig and Hong Jiang
-
-Email: paulo.jannig@ki.se, hong.jiang@ki.se  
-
+Authors:  Paulo Jannig paulo.jannig@ki.se
+          Hong Jiang hong.jiang@ki.se
 Date: 2025-04-08  
 
 ## Introduction
