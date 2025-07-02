@@ -32,13 +32,13 @@ reference:
   ##For human:
   #STAR_index: /mnt/run/shared/genomes/human/Gencode/GRCh38.13/release_42/STAR_index_85bp #path to STAR genome index
   ##For mouse:
-  STAR_index: /mnt/run/shared/genomes/mouse/Gencode/GRCm39/release_M30/STAR_index_85 #path to STAR genome index
+  STAR_index: /mnt/run/shared/genomes/mouse/Gencode/GRCm39/release_M30/STAR_index_85bp #path to STAR genome index
   
   #Annotation
   ##For human:
   #GTF_file: /mnt/run/shared/genomes/human/Gencode/GRCh38.13/release_42/gencode.v42.annotation.gtf #path to gene annotation file in GTF format
   #For mouse:
-  GTF_file: /mnt/run/shared/genomes/mouse/Gencode/GRCm39/release_M30/gencode.vM30.primary_assembly.annotation.gtf #path to gene annotation file in GTF format
+  GTF_file: /mnt/run/shared/genomes/mouse/Gencode/GRCm39/release_M30/gencode.vM30.annotation.gtf #path to gene annotation file in GTF format
   
   exon_extension: no #extend exons by a certain width?
   extension_length: 0 #number of bp to extend exons by
