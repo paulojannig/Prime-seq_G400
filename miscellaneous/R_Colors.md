@@ -1,18 +1,5 @@
----
-quickshare-date: 2023-11-11 20:28:42
-quickshare-url: "https://noteshare.space/note/cloufwlgp1169501mwkcdhpomv#HqltrzIi6XZpQuC61wGJFXN+Et1lkl8We+dR4Y+5qNI"
-title: Check R Colors RcolorBrewer Scico
-created: 2022-12-13 15:34:14
-alias:
-author: Paulo Jannig
-imageNameKey: PJ_work
-tag: status/note, 
----
-Related to: [[Data visualisation]]
-tags:
 
----
-# Notes:
+# RcolorBrewer:
 
 RColorBrewer is an R package that contains a ready-to-use color palettes for creating beautiful graphics.
 
@@ -22,7 +9,9 @@ This article presents the different color palettes available in the RColorBrewer
 ```R
 install.packages("RColorBrewer")
 library(RColorBrewer)
+```
 
+```R
 # To display all the color palettes in the package
 display.brewer.all()
 
@@ -44,9 +33,7 @@ palette_pca <- brewer.pal(n = 12, name = "Paired")
 display.brewer.pal(n = 11, name = 'RdBu')
 brewer.pal(n = 11, name = "RdBu")
 
-
 ```
-
 
 
 
@@ -56,7 +43,6 @@ https://github.com/thomasp85/scico
 https://thomasp85.r-universe.dev/scico/doc/manual.html
 The ’scico’ package provides access to the perceptually uniform and colour-blindness friendly palettes 
 
-Check folder *ScientificColourMaps8*
 ```R
 install.packages("scico")
 library(scico)
