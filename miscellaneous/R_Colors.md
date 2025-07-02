@@ -43,13 +43,14 @@ The ’scico’ package provides access to the perceptually uniform and colour-b
 ```R
 install.packages("scico")
 library(scico)
+```
 
+```R
 scico_palette_show()
 scico(30, palette = 'lapaz')
 
 ##scale_[colour|fill]_scico()
 
-library(scico)
 scico_palette_names()
 scico_palette_show()
 scico_palette_names(categorical = TRUE)
@@ -62,11 +63,11 @@ scico(5, palette = "navia")
 scico_palette_show(n = 5, palette = "navia", categorical = T)
 
 scico(5, palette = "navia", categorical = T)
-"#031327" "#FCF4D9" "#418A80" "#1B608F" "#87C269"
+#"#031327" "#FCF4D9" "#418A80" "#1B608F" "#87C269"
 
 scico_palette_show(n = 10, palette = "oslo")
 scico(n = 3, palette = "oslo", direction = 1)
-"#000000" "#4F7ABB" "#FFFFFF"
+#"#000000" "#4F7ABB" "#FFFFFF"
 
 palette_scico <- viridis::viridis(3)
 palette_scico <- scico(4, palette = "davos")
