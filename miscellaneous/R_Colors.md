@@ -38,7 +38,7 @@ brewer.pal(n = 11, name = "RdBu")
 [User guide](https://www.fabiocrameri.ch/ws/media-library/d799f7fecb4e439998e43597cd397a6c/readme_scientificcolourmaps.pdf)
 https://github.com/thomasp85/scico
 https://thomasp85.r-universe.dev/scico/doc/manual.html
-The ’scico’ package provides access to the perceptually uniform and colour-blindness friendly palettes 
+<br>The ’scico’ package provides access to the perceptually uniform and colour-blindness friendly palettes 
 
 ```R
 install.packages("scico")
