@@ -40,13 +40,16 @@ git clone https://github.com/paulojannig/Prime-seq_G400.git
 # Clone zUMIs repository
 git clone https://github.com/sdparekh/zUMIs.git
 
-cd ~/github_resources/Prime-seq_G400
-screen
 ```
 
 ---
 
 ### 3. Set Up Pixi Environment
+
+```bash
+cd ~/github_resources/Prime-seq_G400
+screen
+```
 
 ```bash
 pixi install
