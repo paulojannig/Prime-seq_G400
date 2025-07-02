@@ -5,9 +5,9 @@
 ###########################################
 
 #define a project name that will be used to name output files
-project: PROJECT_ID
-#FLOWCELL=
-#BARCODE=
+project: EXPERIMENT
+#FLOWCELL=FLOWCELL
+#BARCODE=BARCODE
 
 #Sequencing File Inputs:
 #For each input file, make one list object & define path and barcode ranges
@@ -16,27 +16,29 @@ project: PROJECT_ID
 #you can specify between 1 and 4 input files
 sequence_files:
   file1:
-    name: /mnt/data/paulo/PROJECT_ID/Data/02.TrimmedData/FLOWCELL_BARCODE/FLOWCELL_BARCODE_merge_cutadapt_trimG_1.fastq.gz
+    name: /mnt/run/paulo/EXPERIMENT/Data/02.TrimmedData/FLOWCELL_BARCODE/FLOWCELL_BARCODE_merge_cutadapt_trimG_1.fastq.gz
     base_definition:
       - BC(1-12)
       - UMI(13-28)
   file2:
-    name: /mnt/data/paulo/PROJECT_ID/Data/02.TrimmedData/FLOWCELL_BARCODE/FLOWCELL_BARCODE_merge_cutadapt_trimG_2.fastq.gz
+    name: /mnt/run/paulo/EXPERIMENT/Data/02.TrimmedData/FLOWCELL_BARCODE/FLOWCELL_BARCODE_merge_cutadapt_trimG_2.fastq.gz
     base_definition:
-      - cDNA(15-150)
+      - cDNA(15-100)
 
 
 #reference genome setup
 reference:
-  # For human:
-  STAR_index: /mnt/shared/genomes/homo_sapiens/NCBI/GRCh38/Sequence/STARIndex_153 #path to STAR genome index
-  # For mouse:
-  #STAR_index: /mnt/shared/genomes/mus_musculus/NCBI/GRCm39/Sequence/STARIndex_135bp #path to STAR genome index
+  #STAR INDEX
+  ##For human:
+  #STAR_index: /mnt/run/shared/genomes/human/Gencode/GRCh38.13/release_42/STAR_index_85bp #path to STAR genome index
+  ##For mouse:
+  STAR_index: /mnt/run/shared/genomes/mouse/Gencode/GRCm39/release_M30/STAR_index_85 #path to STAR genome index
   
-  # For human:
-  GTF_file: /mnt/shared/genomes/homo_sapiens/NCBI/GRCh38/Annotation/Genes/gencode.v42.annotation.gtf #path to gene annotation file in GTF format
-  # For mouse:
-  #GTF_file: /mnt/shared/genomes/mus_musculus/NCBI/GRCm39/Annotation/Gencode/gencode.vM30.primary_assembly.annotation.gtf #path to gene annotation file in GTF format
+  #Annotation
+  ##For human:
+  #GTF_file: /mnt/run/shared/genomes/human/Gencode/GRCh38.13/release_42/gencode.v42.annotation.gtf #path to gene annotation file in GTF format
+  #For mouse:
+  GTF_file: /mnt/run/shared/genomes/mouse/Gencode/GRCm39/release_M30/gencode.vM30.primary_assembly.annotation.gtf #path to gene annotation file in GTF format
   
   exon_extension: no #extend exons by a certain width?
   extension_length: 0 #number of bp to extend exons by
@@ -45,16 +47,16 @@ reference:
   additional_STAR_params: #Optional parameter. you may add custom mapping parameters to STAR here
 
 #output directory
-out_dir: /mnt/data/paulo/PROJECT_ID/03.zUMI_mapping #specify the full path to the output directory
-zUMIs_directory: /mnt/data/paulo/github_resources/zUMIs
+out_dir: /mnt/run/paulo/EXPERIMENT/Data/03.zUMI_mapping #specify the full path to the output directory
+zUMIs_directory: /mnt/run/paulo/github_resources/zUMIs
 
 ###########################################
 #below, you may optionally change default parameters
 ###########################################
 
 #number of processors to use
-num_threads: 8
-mem_limit: 100 #Memory limit in Gigabytes, null meaning unlimited RAM usage.
+num_threads: 40
+mem_limit: 300 #Memory limit in Gigabytes, null meaning unlimited RAM usage.
 
 #barcode & UMI filtering options
 #number of bases under the base quality cutoff that should be filtered out.
@@ -72,7 +74,7 @@ filter_cutoffs:
 #If you leave both barcode_num and barcode_file empty, zUMIs will perform automatic cell barcode selection for you!
 barcodes:
   barcode_num: null
-  barcode_file: /mnt/data/paulo/github_resources/prime-seq_preprocessing/primeseq_oligo_barcodes.txt
+  barcode_file: /mnt/run/paulo/github_resources/Prime-seq_G400/Primeseq_barcodes_samples.tsv
   barcode_sharing: null #Optional for combining several barcode sequences per cell (see github wiki)
   automatic: yes #Give yes/no to this option. If the cell barcodes should be detected automatically. If the barcode file is given in combination with automatic barcode detection, the list of given barcodes will be used as whitelist.
   BarcodeBinning: 1 #Hamming distance binning of close cell barcode sequences.
@@ -94,7 +96,6 @@ counting_opts:
 
 #produce stats files and plots?
 make_stats: yes
-
 
 #Start zUMIs from stage. Possible TEXT(Filtering, Mapping, Counting, Summarising). Default: Filtering.
 which_Stage: Filtering
