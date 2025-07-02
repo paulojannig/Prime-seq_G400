@@ -3,9 +3,6 @@
 
 RColorBrewer is an R package that contains a ready-to-use color palettes for creating beautiful graphics.
 
-This article presents the different color palettes available in the RColorBrewer package. You will also learn how to use these palettes in ggplot2 and in R base plots.
-
-
 ```R
 install.packages("RColorBrewer")
 library(RColorBrewer)
