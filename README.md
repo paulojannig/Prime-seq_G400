@@ -23,6 +23,7 @@ This workflow covers:
 
 ```bash
 curl -fsSL https://pixi.sh/install.sh | sh
+restart
 pixi self-update
 ```
 
@@ -125,7 +126,7 @@ Open the untrimmed MultiQC report and go to <i>Per Base Sequence Content</i>:
 
 ### Step 2: Prepare Barcode and YAML Configs
 
-1. **Edit sample barcode file using VS Code:**
+1. **Edit sample barcode file using VS Code or:**
 
 ```bash
 nano ~/github_resources/Prime-seq_G400/Primeseq_barcodes_samples.tsv

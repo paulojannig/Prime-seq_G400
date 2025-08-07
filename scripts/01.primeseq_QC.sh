@@ -30,7 +30,10 @@ mkdir -p \
     03.figures/ \
     04.supplements/ \
     05.miscellaneous \
-    scripts \
+    scripts
+
+## the folders below will contain big files and should be moved to /mnt/storage/USER/${EXPERIMENT} after you're done
+mkdir -p \
     Data/00.reports/G400_QC \
     Data/00.reports/Untrimmed/FastQC_untrimmed_output \
     Data/00.reports/Trimmed/FastQC_trimmed_output \
@@ -38,7 +41,7 @@ mkdir -p \
     Data/02.TrimmedData \
     Data/03.zUMI_mapping
     
-
+## Copy template files and scripts
 cp ~/github_resources/Prime-seq_G400/templates/primeseq_zUMIs.yaml ~/github_resources/Prime-seq_G400/primeseq_zUMIs_${EXPERIMENT}.yaml
 cp ~/github_resources/Prime-seq_G400/templates/Template_Primeseq_barcodes_samples.tsv ~/github_resources/Prime-seq_G400/Primeseq_barcodes_samples.tsv
 
@@ -47,8 +50,7 @@ cp -r ~/github_resources/Prime-seq_G400/scripts/*.R ${PATH_EXPERIMENT}/scripts/
 cp -r ~/github_resources/Prime-seq_G400/templates/sampleInfo.xlsx ${PATH_EXPERIMENT}/01.metadata/
 cp -r ~/github_resources/Prime-seq_G400/miscellaneous/pathways_names_replacements.txt ${PATH_EXPERIMENT}/05.miscellaneous/
 
-
-## Copy files
+## Copy Sequencing files
 echo " ==================== Copying G400 Fastq files and reports ==================== " `date`
 cp ${PATH_RAW_DATA}/${FLOWCELL}/L0*/*${BARCODE}*.fq.gz ${PATH_EXPERIMENT}/Data/01.RawData/multiple_lanes/${FLOWCELL}_${BARCODE}
 cp ${PATH_RAW_DATA}/${FLOWCELL}/L0*/*${BARCODE}*.fq.fqStat.txt ${PATH_EXPERIMENT}/Data/00.reports/G400_QC
