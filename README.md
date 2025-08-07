@@ -68,8 +68,8 @@ pixi shell -e default --manifest-path pixi.toml
 Example:
 ```bash
 EXPERIMENT=PJ101_TEMPLATE
-PATH_EXPERIMENT=/mnt/run/paulo/${EXPERIMENT}
-PATH_RAW_DATA=/mnt/storage/paulo/PJ101_TEMPLATE/
+PATH_EXPERIMENT=/mnt/run/USER/$EXPERIMENT
+PATH_RAW_DATA=/mnt/storage/USER/PJ101_TEMPLATE/
 FLOWCELL=V350293965
 BARCODE=IDTi51i7N701
 ```
@@ -80,7 +80,7 @@ Raw sequencing data for each user should be stored under `/mnt/storage/USER/`
 
 This script will:
 
-* Create the full project folder structure under your `${PATH_EXPERIMENT}`
+* Create the full project folder structure under your user folder (`/mnt/run/USER/$EXPERIMENT`)
 * Copy raw FASTQ files and sequencing run reports from the server (`/mnt/storage/USER/`)
 * Merge data from multiple sequencing lanes
 * Run initial quality control (**FastQC** + **MultiQC**) on the **untrimmed reads**
@@ -153,11 +153,11 @@ cat ~/github_resources/Prime-seq_G400/primeseq_zUMIs_$EXPERIMENT.yaml
 
 ```bash
 cd ~/github_resources/Prime-seq_G400
-nohup ./scripts/02.primeseq_zUMIs.sh >> log.02.primeseq_zUMIs.txt &
+nohup ./scripts/02.primeseq_zUMIs.sh >> log.02.primeseq_zUMIs.txt
 ```
 
 ---
 
 ## ✅ Notes:
 
-* Always monitor your log files for errors (`tail -f log.XX.txt`)
+* Always monitor your log files for errors (e.g. `tail -f log.XX.txt`)
